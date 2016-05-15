@@ -1,0 +1,7 @@
+#lang sicp
+(define (sum_bigger a b c)
+  (cond  ((< a  c) (sum_bigger c b a))
+         ((< b  c) (sum_bigger a c b))
+         (else(+ a b))
+         ) 
+  )
