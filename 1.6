@@ -1,0 +1,2 @@
+新的new-if语句里面采用应用序求值，这样必须先求出参数的值，然后进行代换。根据sqrt-iter的定义，首先将求值(good-enough? guess x)，接着求guess和(sqrt-iter (improve guess x) x)
+这个sqrt-iter 会先求出调用自身，然后进入下一轮调用，这样每次都进行调用自身，从而造成了无限循环。
