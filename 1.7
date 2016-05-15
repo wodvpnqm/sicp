@@ -1,0 +1,7 @@
+可以发现，对于特别小的数，比如 0.00009 ，书本给出的 sqrt 并不能计算出正确的答案； 而对于特别大的数，
+
+DrRacket好像是没有问题的，对 good-enough? 进行修改：不再检测猜测值 guess 的平方与 x 之间的差，而是检测新旧两次猜测值之间的比率，
+当比率变化非常小时，程序就停止 improve 。
+
+(define (good-enough? guess x) (< (/ (abs (- guess (improve guess x))) guess) 0.0001))
+能够正常工作
